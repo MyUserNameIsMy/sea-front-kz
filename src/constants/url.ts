@@ -1,2 +1,2 @@
 // export const API_URL='http://localhost:8055/'
-export const API_URL='https://e95d-87-255-216-85.ngrok-free.app/'
+export const API_URL='https://7b6a-93-185-74-170.ngrok-free.app/'
