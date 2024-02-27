@@ -146,7 +146,6 @@ export class ForecastComponent implements OnInit {
         detail: 'Сервер не смог найти данные о пунктах наблюдения.'
       });
     }
-
   }
 
   async showAnalysis() {
@@ -191,16 +190,16 @@ export class ForecastComponent implements OnInit {
             "_eq": this.selectedDate.getMonth() + 1
           },
         },
-        // {
-        //   "year(date)": {
-        //     "_eq": this.selectedDate.getFullYear()
-        //   },
-        // },
-        // {
-        //   "observation_spot": {
-        //     "_eq": this.selectedSpot.id
-        //   }
-        // },
+        {
+          "year(date)": {
+            "_eq": this.selectedDate.getFullYear()
+          },
+        },
+        {
+          "observation_spot": {
+            "_eq": this.selectedSpot.id
+          }
+        },
         {
           "type": {
             "_eq": this.selectedCharacteristic.type
