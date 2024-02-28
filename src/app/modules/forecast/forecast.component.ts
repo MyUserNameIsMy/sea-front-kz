@@ -161,6 +161,16 @@ export class ForecastComponent implements OnInit {
           },
         },
         {
+          "day(date)": {
+            "_gte": this.selectedDate.getDate() - 3
+          },
+        },
+        {
+          "day(date)": {
+            "_lte": this.selectedDate.getDate() + 3
+          },
+        },
+        {
           "year(date)": {
             "_eq": this.selectedDate.getFullYear()
           },
@@ -210,7 +220,7 @@ export class ForecastComponent implements OnInit {
     try {
       const {data: response} = await lastValueFrom(this.http.get<{
         data: any[]
-      }>(`${API_URL}items/photos?filter=${JSON.stringify(filterPhoto)}`));
+      }>(`${API_URL}items/photos?filter=${JSON.stringify(filterPhoto)}&limit=100`));
       this.photoPath.set(`${API_URL}assets/${response[0]["image"]}`)
       this.messageService.add({severity: 'success', summary: 'Успешно', detail: 'Данные о фото получены.'});
     } catch (err) {
