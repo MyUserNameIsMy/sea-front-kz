@@ -1,16 +1,19 @@
 <p-toast></p-toast>
 <p-card>
-  <ng-template pTemplate="header"><h2 class="flex justify-content-center pt-4 text-center">Прогноз гидродинамических процессов на Каспийском море</h2></ng-template>
+  <ng-template pTemplate="header"><h2 class="flex justify-content-center pt-4 text-center">Прогноз гидродинамических
+    процессов на Каспийском море</h2></ng-template>
   <ng-template pTemplate="body">
     <div class="flex justify-content-center gap-5 flex-wrap">
       <div class="xl:w-2 flex flex-column gap-3">
         <div class="flex flex-column gap-2">
           <label for="characteristics" class="font-bold">Характеристика</label>
-          <p-dropdown id="characteristics" [style]="{'width':'100%'}"  [options]="characteristics" optionLabel="name" [(ngModel)]="selectedCharacteristic"></p-dropdown>
+          <p-dropdown id="characteristics" [style]="{'width':'100%'}" [options]="characteristics" optionLabel="name"
+                      [(ngModel)]="selectedCharacteristic"></p-dropdown>
         </div>
         <div class="flex flex-column gap-2">
           <label for="calendar" class="font-bold">Дата:</label>
-          <p-calendar id="calendar" [style]="{'width':'100%'}" [showIcon]="true" [showButtonBar]="true" [(ngModel)]="selectedDate">
+          <p-calendar id="calendar" [style]="{'width':'100%'}" [showIcon]="true" [showButtonBar]="true"
+                      [(ngModel)]="selectedDate">
           </p-calendar>
         </div>
         <div class="flex justify-content-between align-items-center">
@@ -19,7 +22,8 @@
         </div>
         <div class="flex flex-column gap-2">
           <label for="observationSpots" class="font-bold">Пункт наблюдения:</label>
-          <p-dropdown [style]="{'width':'100%'}" id="observationSpots" [options]="observationSpots" optionLabel="name" [(ngModel)]="selectedSpot"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" id="observationSpots" [options]="observationSpots" optionLabel="name"
+                      [(ngModel)]="selectedSpot"></p-dropdown>
         </div>
         <div class="flex justify-content-center align-items-end flex-grow-1">
           <p-button [rounded]="true" label="Показать" (onClick)=showAnalysis()></p-button>
@@ -37,5 +41,14 @@
       <p-chart type='line' [data]="graph" [options]="options"></p-chart>
     </div>
   </ng-template>
-  <ng-template pTemplate="footer"></ng-template>
+  <ng-template pTemplate="footer">
+    <div class="flex flex-column align-items-center lg:w-6 mx-auto">
+      <p class="text-center">Представленные на странице прогностические карты для акватории Каспийского моря параметров ветрового волнения
+        строятся на основе расчетов по спектрально-волновой модели SWAN, уровни моря строятся на основе расчетов модели
+        MIKE21 Flow Model FM. Необходимые для расчетов прогностические метеорологические данные представлены
+        оперативными данными РГП «Казгидромет» и ECMWF. </p>
+      <p class="text-center">Управление гидрометеорологических исследований Каспийского моря НИЦ РГП «Казгидромет»</p>
+      <p class="text-center">Для контактов: ugmikm&#64;meteo.kz</p>
+    </div>
+  </ng-template>
 </p-card>
