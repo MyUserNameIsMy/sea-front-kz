@@ -1,32 +1,31 @@
 <p-toast></p-toast>
 <p-card>
-  <ng-template pTemplate="header"><h2 class="flex justify-content-center pt-4 text-center">Прогноз гидродинамических
-    процессов на Каспийском море</h2></ng-template>
+  <ng-template pTemplate="header"><h2 class="flex justify-content-center pt-4 text-center">Каспий теңізіндегі гидродинамикалық процестердің болжамы</h2></ng-template>
   <ng-template pTemplate="body">
     <div class="flex justify-content-center gap-5 flex-wrap">
       <div class="xl:w-2 flex flex-column gap-3">
         <div class="flex flex-column gap-2">
-          <label for="characteristics" class="font-bold">Характеристика</label>
+          <label for="characteristics" class="font-bold">Сипаттамалар:</label>
           <p-dropdown id="characteristics" [style]="{'width':'100%'}" [options]="characteristics" optionLabel="name"
                       [(ngModel)]="selectedCharacteristic"></p-dropdown>
         </div>
         <div class="flex flex-column gap-2">
-          <label for="calendar" class="font-bold">Дата прогноза:</label>
+          <label for="calendar" class="font-bold">Болжам күні:</label>
           <p-calendar id="calendar" [style]="{'width':'100%'}" [showIcon]="true" [showButtonBar]="true"
                       [(ngModel)]="selectedDate">
           </p-calendar>
         </div>
         <div class="flex justify-content-between align-items-center">
-          <span class="font-bold">Время:</span>
+          <span class="font-bold">Уақыты:</span>
           <p-dropdown [options]="intervals" optionLabel="value" [(ngModel)]="selectedInterval"></p-dropdown>
         </div>
         <div class="flex flex-column gap-2">
-          <label for="observationSpots" class="font-bold">Пункт наблюдения:</label>
+          <label for="observationSpots" class="font-bold">Бақылау пункті:</label>
           <p-dropdown [style]="{'width':'100%'}" id="observationSpots" [options]="observationSpots" optionLabel="name"
                       [(ngModel)]="selectedSpot"></p-dropdown>
         </div>
         <div class="flex justify-content-center align-items-end flex-grow-1">
-          <p-button [rounded]="true" label="Показать" (onClick)=showAnalysis()></p-button>
+          <p-button [rounded]="true" label="Көрсету" (onClick)=showAnalysis()></p-button>
         </div>
       </div>
       <div class="xl:w-2">
@@ -43,12 +42,10 @@
   </ng-template>
   <ng-template pTemplate="footer">
     <div class="flex flex-column align-items-center lg:w-6 mx-auto">
-      <p class="text-center">На данной странице представлены прогностические карты параметров ветрового волнения и
-        уровня моря для акватории Каспийского моря. Эти карты основаны на расчетах, выполненных с использованием
-        спектрально-волновой модели SWAN и модели MIKE21 Flow Model FM. Для проведения этих расчетов использовались
-        оперативные метеорологические данные, предоставленные РГП «Казгидромет» и ECMWF.</p>
-      <p class="text-center">Управление гидрометеорологических исследований Каспийского моря НИЦ РГП «Казгидромет»</p>
-      <p class="text-center">Для контактов: ugmikm&#64;meteo.kz</p>
+      <p class="text-center">Бұл бетте Каспий теңізінің акваториясы үшін жел толқыны мен теңіз деңгейінің параметрлері болжамдарының карталары берілген. Бұл карталар SWAN спектрлік толқын моделі мен Mike 21 Flow model FM көмегімен жасалған есептеулерге негізделген. Бұл есептеулерді жүргізу үшін "Қазгидромет" РМК және ECMWF ұсынған жедел метеорологиялық деректер пайдаланылды.
+        Ақпарат аптасына 2 рет жаңартылады.</p>
+      <p class="text-center">"Қазгидромет" РМК ҒЗО Каспий теңізінің гидрометеорологиялық зерттеулер басқармасы</p>
+      <p class="text-center">Байланыстар үшін: ugmikm&#64;meteo.kz</p>
     </div>
   </ng-template>
 </p-card>
